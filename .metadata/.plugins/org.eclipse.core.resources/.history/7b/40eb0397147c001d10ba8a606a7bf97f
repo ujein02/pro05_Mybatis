@@ -1,0 +1,28 @@
+package com.shop.myapp.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.shop.myapp.dto.MemberDTO;
+import com.shop.myapp.service.MemberService;
+
+@Controller
+@RequestMapping(value = "/member/")
+public class MemberController {
+	
+	@Autowired
+	MemberService memberService;
+	
+	@GetMapping("list")
+	public String memberList(Model model) {
+		List<MemberDTO> memberList =  memberService.memberList();
+		model.addAttribute("memberList", memberList);
+		return "member/list";
+	}
+
+}

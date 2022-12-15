@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thymeleaf 테스트2</title>
+</head>
+<body>
+    <h1>테스트 화면4</h1>
+    <ul th:object="${sample}">
+    	<li th:text="*{id}"></li>
+    	<li th:text="*{pw}"></li>
+    </ul>
+    <a href="https://www.naver.com">네이버</a><br><hr><br>
+    <a th:href="@{/sample/test5}">테스트5</a>
+</body>
+</html>
